@@ -1,15 +1,19 @@
-// Step 1 : Express.js ko get karenge
+// Step 3.1 : Express.js ko get karenge
 const express = require("express");
 
 const app = express();
 
-// Step 2 : Defining different routes
-app.get("/",(req,res)=>{
+// Step 5.3: auth-router.js ke code ko import karenge
+    const router = require('./router/auth-router');
 
-    res.status(200).send("Welcome to Home Page for testing purpose only");
-})
+    app.use("/api/auth", router);
+// Step 3.2 : Defining different routes
+// app.get("/",(req,res)=>{
 
- // Step 3 : Server ko start karenge and for accessing all the routes
+//     res.status(200).send("Welcome to Home Page for testing purpose only");
+// })
+
+ // Step 3.3 : Server ko start karenge and for accessing all the routes
 
 const PORT = 5000;
 app.listen(PORT,()=>{
