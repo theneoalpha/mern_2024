@@ -34,6 +34,9 @@ const authcontrollers = require("../controllers/auth-controller");
  // STEP 6       
  
         router.route("/").get(authcontrollers.home);
-        router.route("/register").get(authcontrollers.register);
+        //  STEP 7.4 : Register wale route me POST method karenge "auth-router.js" file me  
+
+        // router.route("/register").get(authcontrollers.register);
+        router.route("/register").post(authcontrollers.register);
 
 module.exports = router;

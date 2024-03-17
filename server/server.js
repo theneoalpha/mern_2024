@@ -6,6 +6,10 @@ const app = express();
 // Step 5.3: auth-router.js ke code ko import karenge
     const router = require('./router/auth-router');
 
+    
+
+    app.use(express.json()); // STEP 7.6 Middleware for JSON message dekhne ke liye
+
     app.use("/api/auth", router);
 // Step 3.2 : Defining different routes
 // app.get("/",(req,res)=>{
