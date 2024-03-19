@@ -1,13 +1,17 @@
 // Step 3.1 : Express.js ko get karenge
 const express = require("express");
 
+   // STEP 9.4 : ".env" file ko access karenge
+   require("dotenv").config();
+
 const app = express();
 
 // Step 5.3: auth-router.js ke code ko import karenge
     const router = require('./router/auth-router');
 
     const connectDb = require("./utils/db");
-    
+  
+ 
 
     app.use(express.json()); // STEP 7.6 Middleware for JSON message dekhne ke liye
 
