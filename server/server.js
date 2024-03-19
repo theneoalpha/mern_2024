@@ -6,6 +6,7 @@ const app = express();
 // Step 5.3: auth-router.js ke code ko import karenge
     const router = require('./router/auth-router');
 
+    const connectDb = require("./utils/db");
     
 
     app.use(express.json()); // STEP 7.6 Middleware for JSON message dekhne ke liye
@@ -20,6 +21,14 @@ const app = express();
  // Step 3.3 : Server ko start karenge and for accessing all the routes
 
 const PORT = 5000;
-app.listen(PORT,()=>{
-    console.log(`Server is running at port: ${PORT}`);
-});
+
+// Step 8.2.3 : Database connection 
+
+            // app.listen(PORT,()=>{
+            //     console.log(`Server is running at port: ${PORT}`);
+            // });
+    connectDb().then(()=>{
+        app.listen(PORT,()=>{
+            console.log(`Server is running at port: ${PORT}`);
+        });
+    })

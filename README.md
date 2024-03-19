@@ -90,4 +90,22 @@ GETTING STARTED WITH BACKEND
 
 
 
+        Step 8 : Connecting Backend with MongoDB(database)
+
+                                Step 8.1 : "Mongoose" package install karenge npm package se "npm i mongoose"
+
+                                Step 8.2 : Server folder me "utils" folder banayenge utils>db.js
+
+                                        Step 8.2.1 : db.js me code karenge
+
+                                        Step 8.2.2 : Online Database connect karenge
+
+                                        Step 8.2.3 : Server.js file me Database module ko import karenge 
+
+
+
+
+
+
+
 
