@@ -137,6 +137,22 @@ GETTING STARTED WITH BACKEND
 
                         Step 10.1 : Server > models(FOLDER) > user-models.js
 
+                        Step 10.2 : isme Schema design karenge apne app ke according
+
+                        Step 10.3 : Defining the model or the collection name for users
+
+                        Step 10.4 : "user-models" ko export karayenge and "server.js" 
+                                   me import
+
+
+        Step 11 : POSTMAN to Online Database data add karenge   
+
+                        Step 11.1 : Get karenge "user-models" ko "auth-controller.js" me
+                        Step 11.2 : "auth-controller.js" me define karenge Schema ko   
+
+                               Step 11.2.1 :  Get Registration data
+                               Step 11.2.2 : Checking Existence of the email                      
+
 
 
 
