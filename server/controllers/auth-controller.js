@@ -2,7 +2,8 @@
 // STEP 11.1 : Getting the user-models ko 
 
     const User = require("../models/user-models");
-
+// Step 12.2 : bcrypt ko import kar rahe hai
+    const bcrypt = require("bcryptjs");
 
 const home = async (req,res)=>{
 try{
@@ -44,8 +45,25 @@ const register = async (req,res)=>{
                 if(userExist){
                     return res.status(400).json({msg:"Email already exists"});
                 }
+
+            //Step 12.3:  Hashing the password with bcrypt
+            const saltRound = 10;       // jitna jyada utna more complex , timeconsuming and secure
+
+            const hash_password = await bcrypt.hash(password, saltRound);
+
+
+
+
+
                 // else part
-                const userCreated = await User.create({username, email, phone, password});
+              //  const userCreated = await User.create({username, email, phone, password});
+
+                // Step 12.4 : Replacing the password
+                const userCreated = await User.create({
+                    username,
+                    email,
+                    phone,
+                    password: hash_password});
 
 
                     res.status(200).json({msg : userCreated});

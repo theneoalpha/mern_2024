@@ -151,8 +151,22 @@ GETTING STARTED WITH BACKEND
                         Step 11.2 : "auth-controller.js" me define karenge Schema ko   
 
                                Step 11.2.1 :  Get Registration data
-                               Step 11.2.2 : Checking Existence of the email                      
+                               Step 11.2.2 : Checking Existence of the email
 
+
+        Step 12 : Securing password with bcrypt
+
+                METHOD 01:
+
+                        Step 12.1 : "npm i bcryptjs"
+
+                        Step 12.2 : bcrypt ko import karenge and use karenge "auth-controller.js" me 
+
+                        Step 12.3 : Hashing the password
+
+                        Step 12.4 : password ko replace karenge hash_password se
+
+                     
 
 
 
