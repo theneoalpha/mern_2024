@@ -166,7 +166,10 @@ GETTING STARTED WITH BACKEND
 
                         Step 12.4 : password ko replace karenge hash_password se
 
-                     
+                METHOD 02:
+
+                        Step 12.5 : Pre Method to secure the password using bcrypt "user-models.js" 
+                                  Database me save hone se pahle (pre-method) ye function run hoga    
 
 
 

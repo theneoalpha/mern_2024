@@ -46,26 +46,27 @@ const register = async (req,res)=>{
                     return res.status(400).json({msg:"Email already exists"});
                 }
 
-            //Step 12.3:  Hashing the password with bcrypt
-            const saltRound = 10;       // jitna jyada utna more complex , timeconsuming and secure
+            //Step 12.3:  Hashing the password with bcrypt [
+            //  const saltRound = 10;       // jitna jyada utna more complex , timeconsuming and secure
 
-            const hash_password = await bcrypt.hash(password, saltRound);
-
-
+             // const hash_password = await bcrypt.hash(password, saltRound);
+            
+            //Step 12.3 ]
 
 
 
                 // else part
-              //  const userCreated = await User.create({username, email, phone, password});
+            const userCreated = await User.create({username, email, phone, password});
 
-                // Step 12.4 : Replacing the password
-                const userCreated = await User.create({
-                    username,
-                    email,
-                    phone,
-                    password: hash_password});
+                // Step 12.4 : Replacing the password  [
 
+              //  const userCreated = await User.create({
+              //        username,
+              //      email,
+              //      phone,
+              //      password: hash_password});
 
+                //Step 12.4  ]    
                     res.status(200).json({msg : userCreated});
 
 
