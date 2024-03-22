@@ -169,7 +169,34 @@ GETTING STARTED WITH BACKEND
                 METHOD 02:
 
                         Step 12.5 : Pre Method to secure the password using bcrypt "user-models.js" 
-                                  Database me save hone se pahle (pre-method) ye function run hoga    
+                                  Database me save hone se pahle (pre-method) ye function run hoga   
+
+
+        Step 13 : Json Web Token (JWT) token - user ki authentication and authorization ke                      
+                 liye use karte hai , jwt client side create hota hai harr user ke liye jo ki unique hota hai
+                 aur specific time ke liye hota hai (session) eg IRCTC 3 Min session for logined user
+
+                        
+                        Step 13.0 : JWT ko install karenge npm se "npm i jsonwebtoken"
+
+                        Step 13.1 : "user-models.js" me jwt require karnege and  jsonwebtoken function
+                                        create karenge
+                                                
+
+                        Step 13.2 : "auth-controller.js" me JWT Function use karenge use
+
+                        Step 13.3 : JWT Signature create karenge ".env" me
+
+                        Step 13.4 : POSTMAN se register karke dekhenge TOKEN Generate ho jayega response me dikhega
+
+                        Step 13.5 : Since token generate ho gaya jise hum database me nahi bhejenge 
+                                    vaha sirf "Registration Succesfully" bhejenge so "auth-controller.js" me 
+                                    message denge "Registration Succesfully".
+
+
+
+
+                                                                    
 
 
 

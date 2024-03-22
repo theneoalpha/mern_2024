@@ -67,7 +67,22 @@ const register = async (req,res)=>{
               //      password: hash_password});
 
                 //Step 12.4  ]    
-                    res.status(200).json({msg : userCreated});
+
+
+                
+                // Step 13.2 JWT Function use karenge use
+
+                    // res.status(200).json({msg : userCreated});
+
+                    res.status(200).json({
+
+                        //Step 13.5 : message ko change karenge
+
+                        // msg : userCreated,
+                        msg: "Registration Successful",
+                        token: await userCreated.generateToken(),
+                        userId: userCreated._id.toString(), 
+                    });   // userId ko string me convert karke le rahe hai
 
 
 
@@ -76,7 +91,7 @@ const register = async (req,res)=>{
 
     }
     catch(error){
-            res.status(400).send({msg:"Page not found"});
+            res.status(500).send({msg:"Internal server error"});
     }
     };
 
