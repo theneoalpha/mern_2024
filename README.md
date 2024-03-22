@@ -193,6 +193,24 @@ GETTING STARTED WITH BACKEND
                                     vaha sirf "Registration Succesfully" bhejenge so "auth-controller.js" me 
                                     message denge "Registration Succesfully".
 
+        Step 14 : Login Functionality
+
+                        Step 14.1 : Login Route banayenge "auth-router.js" me
+
+                        Step 14.2 : "auth-controller.js" pe login function banayenge   
+
+                        Step 14.3 : Email validity check - check karenge entered email
+                                    database me hai ya nahi     
+
+                        Step 14.4 : Comparing Password - agar userExist to password ko compare 
+                                    karenge database se
+
+                        Step 14.5 :  login wale method ke token and userid response me "userCreated" ke place me 
+                                        "userExist" use karenge 
+
+                                        token: await userExist.generateToken(),
+                                        userId: userExist._id.toString(),                                    
+
 
 
 

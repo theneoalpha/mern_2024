@@ -93,6 +93,54 @@ const register = async (req,res)=>{
     catch(error){
             res.status(500).send({msg:"Internal server error"});
     }
-    };
+};
 
-module.exports = {home, register};
+ //     Step 14.2 : "auth-controller.js" pe login function banayenge   
+ 
+ 
+ const login = async (req,res)=>{
+
+        try{
+
+            const {email,password} = req.body;
+
+            // Step 14.3 : Email validity check
+
+                const userExist = await User.findOne({email});
+
+                console.log(userExist);
+
+                if(!userExist){
+                    return res.status(400).json({message:"Invalid Credentials"});
+                }
+
+            //  Step 14.4 : Comparing Password
+
+                const user = await bcrypt.compare(password,userExist.password);
+
+                if(user){
+                    res.status(200).json({
+                        msg:" Login Successful",
+                        token: await userExist.generateToken(),
+                        userId: userExist._id.toString(),
+                    });
+
+                }
+                else{
+                    res.status(401).json({message:"Invalid Email or password"});
+                }
+
+
+
+
+        }
+        catch(error){
+            res.status(500).json("internal server error");
+        }
+
+
+
+
+ };
+
+module.exports = {home, register,login};

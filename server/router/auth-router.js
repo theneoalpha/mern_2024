@@ -39,4 +39,8 @@ const authcontrollers = require("../controllers/auth-controller");
         // router.route("/register").get(authcontrollers.register);
         router.route("/register").post(authcontrollers.register);
 
+        // Step 14.1 : login router banayenge
+
+        router.route("/login").post(authcontrollers.login);
+
 module.exports = router;
