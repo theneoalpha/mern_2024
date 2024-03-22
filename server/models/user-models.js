@@ -91,6 +91,11 @@ userSchema.methods.generateToken = async function(){
     }
 };
 
+// Step 14.8 : comparePassword instance method create karenge
+
+userSchema.methods.comparePassword = async function(password){
+    return bcrypt.compare(password, this.password);
+};
 
 
 

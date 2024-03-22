@@ -116,19 +116,41 @@ const register = async (req,res)=>{
 
             //  Step 14.4 : Comparing Password
 
-                const user = await bcrypt.compare(password,userExist.password);
 
-                if(user){
-                    res.status(200).json({
-                        msg:" Login Successful",
-                        token: await userExist.generateToken(),
-                        userId: userExist._id.toString(),
-                    });
 
-                }
-                else{
-                    res.status(401).json({message:"Invalid Email or password"});
-                }
+                    // const user = await bcrypt.compare(password,userExist.password);
+
+                    // if(user){
+                    //     res.status(200).json({
+                    //         msg:" Login Successful",
+                    //         token: await userExist.generateToken(),
+                    //         userId: userExist._id.toString(),
+                    //     });
+
+                    // }
+                    // else{
+                    //     res.status(401).json({message:"Invalid Email or password"});
+                    // }
+
+                    // Step 14.7 compare password ko instance function banate hai user-models me
+
+                        const user = await userExist.comparePassword(password);
+
+                         if(user){
+                         res.status(200).json({
+                             msg:" Login Successful",
+                             token: await userExist.generateToken(),
+                             userId: userExist._id.toString(),
+                         });
+
+                     }
+                     else{
+                         res.status(401).json({message:"Invalid Email or password"});
+                     }
+
+                        
+
+
 
 
 

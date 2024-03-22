@@ -209,7 +209,17 @@ GETTING STARTED WITH BACKEND
                                         "userExist" use karenge 
 
                                         token: await userExist.generateToken(),
-                                        userId: userExist._id.toString(),                                    
+                                        userId: userExist._id.toString(), 
+
+
+                        Step 14.6 : ab POSTMAN me "login" route pe POST
+                                    karke dekhenge              
+
+                        Step 14.7 : comparing password method ko ek "instace variable/function" banayenge 
+                        taaki "auth-controller.js" ki complexity kamm ho  
+
+                        Step 14.8 : "user-models.js" me "comparePassword" instance
+                                     function banayenge                                               
 
 
 
