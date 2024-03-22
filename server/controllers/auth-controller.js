@@ -132,7 +132,7 @@ const register = async (req,res)=>{
                     //     res.status(401).json({message:"Invalid Email or password"});
                     // }
 
-                    // Step 14.7 compare password ko instance function banate hai user-models me
+                // Step 14.7 compare password ko instance function banate hai user-models me
 
                         const user = await userExist.comparePassword(password);
 
