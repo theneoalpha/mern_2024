@@ -1,6 +1,12 @@
 const express = require("express");
 
+// Step 15.6 : validator middleware ko imoort karenge
+
+const {signupSchema} = require("../validators/auth-validator");
+const validate = require("../middlewares/validate-middleware");
 // express.routes class hai aur iss class ko use karenge routing define karne ke liye
+
+
 
 const router = express.Router();
 
@@ -37,7 +43,15 @@ const authcontrollers = require("../controllers/auth-controller");
         //  STEP 7.4 : Register wale route me POST method karenge "auth-router.js" file me  
 
         // router.route("/register").get(authcontrollers.register);
-        router.route("/register").post(authcontrollers.register);
+
+                
+
+        // router.route("/register").post(authcontrollers.register);
+
+                // Step 15.6 : using validate middleware
+
+                        router.route("/register").post( validate(signupSchema), authcontrollers.register);
+
 
         // Step 14.1 : login router banayenge
 

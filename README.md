@@ -219,7 +219,28 @@ GETTING STARTED WITH BACKEND
                         taaki "auth-controller.js" ki complexity kamm ho  
 
                         Step 14.8 : "user-models.js" me "comparePassword" instance
-                                     function banayenge                                               
+                                     function banayenge 
+
+
+        Step 15 : Validation of register field with "ZOD" npm package eg. passwod must be 8 character minimum 
+                and phone number must be 10 character
+
+                        Step 15.1 : server > validators(folder) > auth-validator.js
+
+                        Step 15.2 : npm i zod & "auth-validator.js" me import karenge
+
+                        Step 15.3 :  object schema create karenge
+
+                        Step 15.4 : validator(middleware) jo validate karega user register detail fulfill kar raha hai ya nai
+                                   zod ke schema ke according 
+
+                                        server > middlewares(folder) > validate-middleware.js
+
+                        Step 15.5 Zod me ek method(function) hai parseAsync() jo ye check karta hai     
+
+                        Step 15.6 : "auth-router.js" me validator ko register me as a middleware use karenge
+
+
 
 
 
